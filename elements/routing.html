@@ -37,6 +37,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       page.redirect('/');
     });
 
+    page.base(window.location.pathname);
+
     // add #! before urls
     page({
       hashbang: true

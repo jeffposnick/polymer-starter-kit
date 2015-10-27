@@ -16084,6 +16084,8 @@ module.exports = Array.isArray || function (arr) {
       page.redirect('/');
     });
 
+    page.base(window.location.pathname);
+
     // add #! before urls
     page({
       hashbang: true
