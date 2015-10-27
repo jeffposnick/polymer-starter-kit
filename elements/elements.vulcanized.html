@@ -16069,8 +16069,10 @@ module.exports = Array.isArray || function (arr) {
       next();
     }
 
+    page.base(window.location.pathname.replace(/\/$/, ''));
+
     // Routes
-    page('/', scrollToTop, function() {
+    page('/playByPlay', scrollToTop, function() {
       app.route = 'play-by-play';
     });
 
@@ -16079,12 +16081,8 @@ module.exports = Array.isArray || function (arr) {
     });
 
     page('*', function() {
-      app.$.toast.text = 'Can\'t find: ' + window.location.href  + '. Redirected you to Home Page';
-      app.$.toast.show();
-      page.redirect('/');
+      page.redirect('/playByPlay');
     });
-
-    page.base(window.location.pathname.replace(/\/$/, ''));
 
     // add #! before urls
     page({
