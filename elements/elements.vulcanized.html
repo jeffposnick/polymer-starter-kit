@@ -16084,7 +16084,7 @@ module.exports = Array.isArray || function (arr) {
       page.redirect('/');
     });
 
-    page.base(window.location.pathname);
+    page.base(window.location.pathname.replace(/\/$/, ''));
 
     // add #! before urls
     page({
