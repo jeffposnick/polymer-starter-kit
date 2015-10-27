@@ -16080,6 +16080,10 @@ module.exports = Array.isArray || function (arr) {
       app.route = 'submit-play';
     });
 
+    page('/getCode', scrollToTop, function() {
+      app.route = 'get-code';
+    });
+
     page('*', function() {
       page.redirect('/playByPlay');
     });
